@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(233, 233, 233);
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: azure;
+}
+li {
+    float: left;
+}
+li a {
+   color: rgb(28, 133, 224);
+   display: inline-block;
+   text-decoration: none;
+   padding: 14px 16px;
+}
+li a:hover {
+    background-color: brown;
+    color: white;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+    padding: 20px;
+    background-color:  azure;
+    border: none;
+    border-radius: 8px;
+    width: 50%;
+    margin-top: 120px;
+    margin-left: 300px;
+    display: none;
+}
+input[type=text], input[type=password] {
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+input[type=submit] {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+}
+.button:after {
+    content: "";
+    display: table;
+    clear: both;
+}
