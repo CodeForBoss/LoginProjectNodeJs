@@ -11,20 +11,20 @@ ul{
 li {
     float: left;
 }
-li a {
+li a, #frost{
    color: rgb(28, 133, 224);
    display: inline-block;
    text-decoration: none;
    padding: 14px 16px;
 }
-li a:hover {
+li a:hover, #frost:hover{
     background-color: brown;
     color: white;
 }
 * {
   box-sizing: border-box;
 }
-.container {
+#container {
     padding: 20px;
     background-color:  azure;
     border: none;
@@ -51,8 +51,16 @@ input[type=submit] {
     cursor: pointer;
     float: right;
 }
-.button:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
+}
+#frost {
+    border: none;
+    background-color: azure;
+}
+#close{
+    border: none;
+    background-color: azure;
 }
