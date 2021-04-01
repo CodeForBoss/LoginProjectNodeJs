@@ -56,10 +56,6 @@ input[type=submit] {
     display: table;
     clear: both;
 }
-#frost {
-    border: none;
-    background-color: azure;
-}
 #close{
     border: none;
     background-color: azure;
