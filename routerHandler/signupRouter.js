@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const formSchema = require('../Schemas/formSchema');
-const signupClass = new mongoose.model("SIGNUP", formSchema);
+const signupClass = new mongoose.model("DATA", formSchema);
 
 const router = express.Router();
 
-router.get('/', async(req,res) => {
-      
+router.get('/', async (req,res) => {
+    res.render('signup.ejs');
 });
 
-router.post('#signup/submit', async (req,res) => {
+router.post('/', async (req,res) => {
       
 });
 
