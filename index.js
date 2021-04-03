@@ -2,12 +2,15 @@ const express = require('express');
 const app = express();
 const signUpRouter = require('./routerHandler/signupRouter');
 const mongoose = require('mongoose');
-
+const signInRouter = require('./routerHandler/signInRouter');
 
 app.use(express.static(__dirname+'/HtmlFile'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/signup', signUpRouter);
+app.use('/signin', signInRouter);
+
+
 
 mongoose.connect('mongodb://localhost/data',{useNewUrlParser: true,useUnifiedTopology: true }).then(()=>{
   console.log("Connection successful");

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcryptjs');
 const signUpForm = mongoose.Schema({
      FirstName: {
          type: String,
@@ -18,5 +18,10 @@ const signUpForm = mongoose.Schema({
         required: true,
     }
 });
-
+signUpForm.pre("save", async function(next) {
+       if(this.isModified("Password")){
+              this.Password = await bcrypt.hash(this.Password, 10);
+       }
+     next();  
+});
 module.exports = signUpForm;
