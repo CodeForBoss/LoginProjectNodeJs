@@ -18,10 +18,10 @@ const signUpForm = mongoose.Schema({
         required: true,
     }
 });
-signUpForm.pre("save", async function(next) {
+/*signUpForm.pre("save", async function(next) {
        if(this.isModified("Password")){
               this.Password = await bcrypt.hash(this.Password, 10);
        }
      next();  
-});
+});*/
 module.exports = signUpForm;

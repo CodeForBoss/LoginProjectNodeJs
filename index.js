@@ -4,7 +4,9 @@ const signUpRouter = require('./routerHandler/signupRouter');
 const mongoose = require('mongoose');
 const signInRouter = require('./routerHandler/signInRouter');
 
-app.use(express.static(__dirname+'/HtmlFile'));
+
+app.use(express.static(__dirname + '/CssFile'));
+app.set('view engine','ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/signup', signUpRouter);
@@ -18,7 +20,7 @@ mongoose.connect('mongodb://localhost/data',{useNewUrlParser: true,useUnifiedTop
   console.log("error");
 });
 app.get('/',(req,res) => {
-    res.sendFile(__dirname+'/HtmlFile/home.html');
+   res.render('home.ejs');
 });
 
 app.post('/',(req,res) => {

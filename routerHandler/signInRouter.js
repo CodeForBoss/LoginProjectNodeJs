@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const signUpSchema = require('../Schemas/formSchema');
-const ModelClass = new mongoose.model("DATA",signUpSchema);
+const signupForm = require('../Schemas/formSchema');
+const ModelClass = new mongoose.model("DATA", signupForm);
 const bcrypt = require('bcryptjs');
 
 const router = express.Router();
@@ -17,7 +17,7 @@ router.post('/', async(req,res) =>{
           const pass = req.body.password;
           const user = await ModelClass.findOne({Phone:phone});
         if(bcrypt.compare(pass,user.Password)){
-             res.send("Login Successfully");
+             res.render('dashboard.ejs');
         } else {
             res.send("Invalid login! please try again");
         }
