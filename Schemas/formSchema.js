@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const signUpForm = mongoose.Schema({
+const signUpForm = new mongoose.Schema({
      FirstName: {
          type: String,
          required: true,
@@ -24,4 +24,5 @@ const signUpForm = mongoose.Schema({
        }
      next();  
 });*/
-module.exports = signUpForm;
+const User =   mongoose.model("DATA", signUpForm);
+module.exports = User;

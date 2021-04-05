@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const signupForm = require('../Schemas/formSchema');
-const ModelClass = new mongoose.model("DATA", signupForm);
+const ModelClass = require('../Schemas/formSchema');
 const bcrypt = require('bcryptjs');
 
 const router = express.Router();
