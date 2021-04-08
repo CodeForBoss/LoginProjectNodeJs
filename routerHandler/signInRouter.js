@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const ModelClass = require('../Schemas/formSchema');
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 const router = express.Router();
 
@@ -9,21 +10,12 @@ router.get('/' ,async(req,res) => {
      res.render('login.ejs');
 });
 
-router.post('/', async(req,res) =>{
-     try{
-
-        const phone = req.body.phone;
-          const pass = req.body.password;
-          const user = await ModelClass.findOne({Phone:phone});
-        if(bcrypt.compare(pass,user.Password)){
-             res.render('dashboard.ejs');
-        } else {
-            res.send("Invalid login! please try again");
-        }
-
-     } catch(error){
-         res.send('Invalid login! please try again')
-     }
+router.post('/', async(req,res,next) =>{
+     passport.authenticate('local', {
+          successRedirect: '/dashboard',
+          failureRedirect: '/signin',
+          failureFlash: true
+     })(req,res, next);
 });
 
 router.put('/', async(req,res) => {
