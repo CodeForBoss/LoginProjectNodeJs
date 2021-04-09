@@ -18,6 +18,8 @@ const signUpForm = new mongoose.Schema({
         required: true,
     }
 });
+
+// Password Encyptions
 /*signUpForm.pre("save", async function(next) {
        if(this.isModified("Password")){
               this.Password = await bcrypt.hash(this.Password, 10);

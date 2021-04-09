@@ -9,7 +9,6 @@ require('./Passport/passport.js')(passport);
 const dashboardRouter = require('./routerHandler/dashboardRouter.js');
 
 
-
 const expressSession = require('express-session')({
   secret: 'secret',
   resave: false,
@@ -39,9 +38,6 @@ app.get('/',(req,res) => {
    res.render('home.ejs');
 });
 
-app.post('/',(req,res) => {
-    console.log('hit from index');
-});
 app.listen(4000,() => {
     console.log('listening on port 4000');
 });

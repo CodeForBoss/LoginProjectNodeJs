@@ -21,7 +21,7 @@ router.post('/', async (req,res) => {
           });
          const signuped = await signupPerson.save();
          res.status(201);
-         res.send("sign up successfully");
+         res.redirect('/dashboard');
         } else {
             if(user.Phone === phone){
                 res.send("User already Exits!");

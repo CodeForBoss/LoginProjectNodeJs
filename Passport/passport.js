@@ -1,6 +1,4 @@
 const LocalStrategy = require('passport-local').Strategy;
-const mongoose = require('mongoose');
-
 const User = require('../Schemas/formSchema.js');
 
 
