@@ -19,6 +19,7 @@ router.post('/', async (req,res) => {
                 Phone: req.body.phone,
                 Password: req.body.password
           });
+          const token = await signupPerson.generateAuthToken();
          const signuped = await signupPerson.save();
          res.status(201);
          res.redirect('/dashboard');
